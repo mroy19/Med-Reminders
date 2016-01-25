@@ -22,17 +22,17 @@
             deferred.resolve('Welcome ' + name + '!');
           } else {
             deferred.reject('Wrong credentials.');
-          }
+          };
           promise.success = function(fn) {
             promise.then(fn);
             return promise;
-          }
+          };
           promise.error = function() {
             promise.then(null, fn);
             return promise;
-          }
+          };
           return promise;
-        }
+        };
       }
     })
 //TODO - REFACTOR FOR TOCKENS
@@ -52,15 +52,15 @@
           promise.success = function(fn) {
             promise.then(fn);
             return promise;
-          }
+          };
           promise.error = function() {
             promise.then(null, fn);
             return promise;
-          }
+          };
           return promise;
-        }
-      }
-    })
+        };
+      };
+    });
 
 
 

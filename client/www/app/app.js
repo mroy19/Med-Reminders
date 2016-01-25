@@ -8,7 +8,7 @@
   'use strict';
 
   angular
-    .module('starter', ['ionic', 'starter.dashboard', 'starter.services'])
+    .module('starter', ['ionic', 'starter.dashboard', 'starter.services', 'starter.register', 'starter.login'])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -38,6 +38,11 @@
           url: '/login',
           templateUrl: 'app/login/login.html',
           controller: 'LoginCtrl'
+        })
+        .state('register', {
+          url: '/register',
+          templateUrl: 'app/register/register.html',
+          controller: 'RegisterCtrl'
         })
         .state('medsForm', {
           url: '/medsForm/',

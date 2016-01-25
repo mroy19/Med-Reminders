@@ -1,3 +1,7 @@
+
+
+
+
 /**
  *
  * Factories will go here
@@ -22,7 +26,9 @@
             deferred.resolve('Welcome ' + name + '!');
           } else {
             deferred.reject('Wrong credentials.');
-          }
+
+          };
+
           promise.success = function(fn) {
             promise.then(fn);
             return promise;
@@ -32,8 +38,12 @@
             return promise;
           };
           return promise;
+
+
         }
       };
+
+
     })
     //TODO - REFACTOR FOR TOCKENS
     .service('RegisterService', function($q) {
@@ -58,6 +68,7 @@
             return promise;
           };
           return promise;
+
         }
       };
     })
@@ -67,8 +78,12 @@
       medication.getMeds = function(user) {
         /**
 
+
+
           TODO:
           - sends GET request to get the array of med objects from database that matches the user
+
+
 
          */
         /* Mock Data */
@@ -80,8 +95,12 @@
       medication.updateMeds = function() {
         /**
 
+
+
           TODO:
           - sends PUT request to update that specific medicaiton for the user
+
+
 
          */
 
@@ -89,8 +108,12 @@
       medication.deleteMeds = function() {
         /**
 
+
+
           TODO:
           - sends DELETE request to remove that medication of the user
+
+
 
          */
 
@@ -98,4 +121,9 @@
 
       return medication;
     });
+
+
 })();
+
+
+

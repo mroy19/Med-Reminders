@@ -26,20 +26,20 @@
           promise.success = function(fn) {
             promise.then(fn);
             return promise;
-          }
+          };
           promise.error = function() {
             promise.then(null, fn);
             return promise;
-          }
+          };
           return promise;
         }
-      }
+      };
     })
-//TODO - REFACTOR FOR TOCKENS
+    //TODO - REFACTOR FOR TOCKENS
     .service('RegisterService', function($q) {
       return {
-    //expects the name and password from the user
-    // the promises to verify the user to a REST server - async
+        //expects the name and password from the user
+        // the promises to verify the user to a REST server - async
         registerUser: function() {
           var deferred = $q.defer();
           var promise = deferred.promise;
@@ -52,17 +52,50 @@
           promise.success = function(fn) {
             promise.then(fn);
             return promise;
-          }
+          };
           promise.error = function() {
             promise.then(null, fn);
             return promise;
-          }
+          };
           return promise;
         }
-      }
+      };
     })
+    .service('MedService', function($http) {
+      var medication = {};
 
+      medication.getMeds = function(user) {
+        /**
 
+          TODO:
+          - sends GET request to get the array of med objects from database that matches the user
 
+         */
+        /* Mock Data */
+        return $http({
+          method: 'GET',
+          url: '/api/medications'
+        });
+      };
+      medication.updateMeds = function() {
+        /**
 
+          TODO:
+          - sends PUT request to update that specific medicaiton for the user
+
+         */
+
+      };
+      medication.deleteMeds = function() {
+        /**
+
+          TODO:
+          - sends DELETE request to remove that medication of the user
+
+         */
+
+      };
+
+      return medication;
+    });
 })();

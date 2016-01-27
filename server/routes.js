@@ -13,7 +13,7 @@ const internals = {
     signup: {
       payload: Joi.object().required().keys({
         email: Joi.string().required(),
-        password: Joi.string().min(8).required()
+        password: Joi.string().required()
       })
     },
     signin: {
@@ -45,7 +45,6 @@ exports.register = (plugin, options, next) => {
   let handlers = plugin.plugins.controllers.handlers;
 
   plugin.route([
-    { method: 'OPTIONS', path: '/{path*}', config: internals.optionsConfig },
     { method: 'POST', path: '/user/signup', config: { auth: false, handler: handlers['Users'].signup, validate: internals.routeValidation.signup } },
     { method: 'POST', path: '/user/signin', config: { auth: false, handler: handlers['Users'].signin, validate: internals.routeValidation.signin } },
     { method: 'GET', path: '/restricted', config: { auth: 'jwt', handler: handlers['Restricted'] } },

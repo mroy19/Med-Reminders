@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 // describe('requests made', function() {
 
 //   afterEach(function() {
@@ -61,4 +60,4 @@
 //     expect(mock.requestsMade()).toEqual([]);
 //   });
 // });
->>>>>>> (refactor) testing
+

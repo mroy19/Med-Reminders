@@ -58,7 +58,7 @@
 
 	var _angularComponent2 = _interopRequireDefault(_angularComponent);
 
-	var _common = __webpack_require__(12);
+	var _common = __webpack_require__(17);
 
 	var _common2 = _interopRequireDefault(_common);
 
@@ -66,7 +66,7 @@
 
 	var _components2 = _interopRequireDefault(_components);
 
-	var _app = __webpack_require__(10);
+	var _app = __webpack_require__(15);
 
 	var _app2 = _interopRequireDefault(_app);
 
@@ -17909,6 +17909,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+	//to do update
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -17922,11 +17923,11 @@
 
 	var _dashboard4 = _interopRequireDefault(_dashboard3);
 
-	var _dashboardSignin = __webpack_require__(17);
+	var _dashboardSignin = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../auth/dashboard.signin.controller\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _dashboardSignin2 = _interopRequireDefault(_dashboardSignin);
 
-	var _dashboardSignup = __webpack_require__(18);
+	var _dashboardSignup = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../auth/dashboard.signup.controller\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _dashboardSignup2 = _interopRequireDefault(_dashboardSignup);
 
@@ -17936,9 +17937,9 @@
 	  restrict: 'E',
 	  bindings: {},
 	  template: _dashboard2.default,
-	  controller: _dashboard4.default,
-	  signupController: _dashboardSignup2.default,
-	  signinController: _dashboardSignin2.default,
+	  DashboardController: _dashboard4.default,
+	  SignupController: _dashboardSignup2.default,
+	  SigninController: _dashboardSignin2.default,
 	  controllerAs: 'vm'
 	};
 
@@ -17973,7 +17974,12 @@
 	exports.default = DashboardController;
 
 /***/ },
-/* 10 */
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -17982,7 +17988,7 @@
 	  value: true
 	});
 
-	var _app = __webpack_require__(11);
+	var _app = __webpack_require__(16);
 
 	var _app2 = _interopRequireDefault(_app);
 
@@ -17996,13 +18002,13 @@
 	exports.default = appComponent;
 
 /***/ },
-/* 11 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class='app'>\n  <div ui-view></div>\n</div>\n"
 
 /***/ },
-/* 12 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -18015,7 +18021,7 @@
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _navbar = __webpack_require__(13);
+	var _navbar = __webpack_require__(18);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -18026,7 +18032,7 @@
 	exports.default = commonModule;
 
 /***/ },
-/* 13 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -18043,7 +18049,7 @@
 
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 
-	var _navbar = __webpack_require__(14);
+	var _navbar = __webpack_require__(19);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
@@ -18054,7 +18060,7 @@
 	exports.default = navbarModule;
 
 /***/ },
-/* 14 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -18063,11 +18069,11 @@
 	  value: true
 	});
 
-	var _navbar = __webpack_require__(15);
+	var _navbar = __webpack_require__(20);
 
 	var _navbar2 = _interopRequireDefault(_navbar);
 
-	var _navbar3 = __webpack_require__(16);
+	var _navbar3 = __webpack_require__(21);
 
 	var _navbar4 = _interopRequireDefault(_navbar3);
 
@@ -18084,13 +18090,13 @@
 	exports.default = navbarComponent;
 
 /***/ },
-/* 15 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = "<section class=\"nav-bar\">\n\n  <a ui-sref=\"view-medications\">\n    <div class=\"view-tab nav-tab\">\n\n      <h2>View<br>Medications</h2>\n\n    </div>\n  </a>\n\n  <a ui-sref=\"add-medication\">\n    <div class=\"lower-tab nav-tab add-medication\">\n\n      <h2>Add<br>Medication</h2>\n\n    </div>\n  </a>\n\n  <a ui-sref=\"view-reports\">\n    <div class=\"lower-tab nav-tab view-reports\">\n\n      <h2>View<br>Reports</h2>\n\n    </div>\n  </a>\n\n</section>\n"
 
 /***/ },
-/* 16 */
+/* 21 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -18108,64 +18114,6 @@
 	};
 
 	exports.default = NavbarController;
-
-/***/ },
-/* 17 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	//Todo: update
-
-	var SigninController = function SigninController($state, AuthService) {
-	  _classCallCheck(this, SigninController);
-
-	  this.user = {};
-	  this.title = 'Sign In';
-	  this.action = 'Sign In';
-	  AuthService.signin(this.user).then(function (data) {
-	    return $state.go('dashboard').catch(function (data) {
-	      return console.log("error");
-	    });
-	  });
-	};
-
-	exports.default = SigninController;
-
-/***/ },
-/* 18 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	//Todo: update
-
-	var SigninController = function SigninController($state, AuthService) {
-	  _classCallCheck(this, SigninController);
-
-	  this.user = {};
-	  this.title = 'Sign Up';
-
-	  AuthService.signup(this.user).then(function (data) {
-	    return $state.go('dashboard').catch(function (data) {
-	      return console.log("error");
-	    });
-	  });
-	};
-
-	exports.default = SigninController;
 
 /***/ }
 /******/ ]);

@@ -16,7 +16,10 @@ class medicationsController {
 
   }
   
+<<<<<<< HEAD
 
+=======
+>>>>>>> (feat) enable token auth
   // getMedData() {
   //   this.MedFactory.getMeds()
   //   .then(medsArray => {

@@ -16,10 +16,6 @@ class medicationsController {
 
   }
   
-  
-
-
-
   // getMedData() {
   //   this.MedFactory.getMeds()
   //   .then(medsArray => {
@@ -29,8 +25,6 @@ class medicationsController {
   //     console.log('error');
   //   });
   // }
-
-
 }
 
 export default medicationsController;
